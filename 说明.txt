@@ -1,0 +1,50 @@
+https://github.com/angular/angular-cli
+
+
+>npm uninstall -g @angular/cli
+>npm cache verify
+>npm install -g @angular/cli
+
+>ng new PROJECT-NAME --style=scss
+>cd PROJECT-NAME
+>ng serve
+
+安装bootstrap框架(非必需)
+>npm install --save bootstrap
+在.angular.json里配置
+"styles": [
+"./node_modules/bootstrap/dist/css/bootstrap.min.css",
+"src/styles.scss"
+],
+
+
+若要支持IE9+
+需要注释掉src/polyfills.ts里的一些代码
+
+
+创建Component
+>ng g c COMPONENT_NAME
+
+创建Directive
+>ng g g DIRECTIVE_NAME
+
+创建Pipe
+>ng g p PIPE_NAME
+
+创建Module
+>ng g m MODULE_NAME --flat --spec=false
+
+
+
+http://wx.bjlxhqx.com
+
+NGRX
+https://github.com/ngrx
+>npm install @ngrx/store --save
+>npm install @ngrx/effects --save
+>npm install @ngrx/store-devtools --save
+https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
+
+
+ng build --prod
+ng build --prod --build-optimizer

@@ -1,0 +1,8 @@
+<app-header [ngStyle]="{'display':(show$ | async)==true?'block':'none'}"></app-header>
+
+
+<main [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+  <router-outlet #o="outlet" id="main"></router-outlet>
+</main>
+
+

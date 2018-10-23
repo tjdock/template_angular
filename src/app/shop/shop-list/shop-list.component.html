@@ -1,0 +1,22 @@
+<div class="container-fluid pt-3 mb-3">
+  <div class="row">
+    <div class="col-4">
+      <div class="list-group">
+        <a class="list-group-item d-flex list-group-item-action"
+           *ngFor="let shop of (stores$ | async)"
+           [ngClass]="{active:(storeid$ | async)==shop.id}"
+           routerLink="{{shop.id}}">
+          <img [src]="(imgsite$ | async)+shop.iconimg" class="img-thumbnail iconimg">
+          <div class="text-truncate">
+            <p class="mb-0 ml-3 text-truncate">{{shop.address}}</p>
+            <p class="mb-0 ml-3">{{shop.phone}}</p>
+            <p class="mb-0 ml-3">适用范围：所有店通用</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-8">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

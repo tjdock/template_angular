@@ -1,0 +1,41 @@
+<!--顶部开始-->
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">LOGO</a>
+    <button class="navbar-toggler" appNavbarToggle>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" routerLink="/home">首页</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/shop">门店列表</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/user/signup">注册</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/user/login">登录</a>
+        </li>
+        <li class="nav-item dropdown" >
+          <a class="nav-link dropdown-toggle" appDropDown href="javascript:void(0)">
+            用户名
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" routerLink="/user/my-cars">我的车库</a>
+            <a class="dropdown-item" routerLink="/user/add-cars">添加爱车</a>
+            <a class="dropdown-item" routerLink="/user/edit-password">修改密码</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="javascript:void(0)">注销</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--顶部结束-->

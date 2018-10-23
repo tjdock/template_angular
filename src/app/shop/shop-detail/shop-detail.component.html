@@ -1,0 +1,66 @@
+<div class="row" *ngIf="store$ | async as sa">
+  <div class="col">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li *ngFor="let item of sa.imgs;let i=index"
+            [ngClass]="{active:isActive(i)}"
+            (click)="navTo(i)"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item"
+             *ngFor="let item of sa.imgs;let i=index"
+             [ngClass]="{active:isActive(i)}">
+          <img class="d-block w-100"
+               [src]="(imgsite$ | async)+item.imgurl">
+        </div>
+
+      </div>
+      <a class="carousel-control-prev" role="button" (click)="prev()" href="javascript:void(0)">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" role="button" (click)="next()" href="javascript:void(0)">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+  </div>
+  <div class="col" >
+    <p>店名：{{sa.storename}}</p>
+    <p>咨询电话：{{sa.phone}}</p>
+    <p>地址：{{sa.address}}</p>
+    <div [innerHtml]="sa.description"></div>
+  </div>
+</div>
+
+
+<!--<div class="row" *ngIf="shopsState | async as sa">-->
+  <!--<div class="col">-->
+    <!--<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">-->
+      <!--<ol class="carousel-indicators">-->
+        <!--<li *ngFor="let item of sa.shop?.imgs;let i=index"-->
+            <!--[ngClass]="{active:isActive(i)}"-->
+            <!--(click)="navTo(i)"></li>-->
+      <!--</ol>-->
+      <!--<div class="carousel-inner">-->
+        <!--<div class="carousel-item"-->
+             <!--*ngFor="let item of sa.shop?.imgs;let i=index"-->
+             <!--[ngClass]="{active:isActive(i)}">-->
+          <!--<img class="d-block w-100"-->
+               <!--[src]="sa.imgsite+item.imgurl">-->
+        <!--</div>-->
+
+      <!--</div>-->
+      <!--<a class="carousel-control-prev" role="button" (click)="prev()" href="javascript:void(0)">-->
+        <!--<span class="carousel-control-prev-icon"></span>-->
+      <!--</a>-->
+      <!--<a class="carousel-control-next" role="button" (click)="next()" href="javascript:void(0)">-->
+        <!--<span class="carousel-control-next-icon"></span>-->
+      <!--</a>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="col" >-->
+    <!--<p>店名：{{sa.shop?.storename}}</p>-->
+    <!--<p>咨询电话：{{sa.shop?.phone}}</p>-->
+    <!--<p>地址：{{sa.shop?.address}}</p>-->
+    <!--<div [innerHtml]="sa.shop?.description"></div>-->
+  <!--</div>-->
+<!--</div>-->
